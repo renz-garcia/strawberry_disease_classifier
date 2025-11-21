@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <img src="{{ image_url }}" alt="Uploaded Image" width="300">
+    <h3>Predicted Label: <strong>{{ label }}</strong></h3>
+    <p>Class Index: {{ index }}</p>
+    <a href="{% url 'upload' %}">Classify Another Image</a>
+</body>
+</html>
