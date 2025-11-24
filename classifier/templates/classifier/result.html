@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,13 +6,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'classifier/result.css' %}">
     <title>Prediction Result</title>
 </head>
 <body>
-    <h2>Prediction Result</h2>
-    <img src="{{ image_url }}" alt="Uploaded Image" width="300">
-    <h3>Predicted Label: <strong>{{ label }}</strong></h3>
-    <p>Class Index: {{ index }}</p>
-    <a href="{% url 'upload' %}">Classify Another Image</a>
+    <h1>Prediction Result</h1>
+    <div class="prediction-container">
+        <img class="uploaded-image" src="{{ image_url }}" alt="Uploaded Image" width="300">
+        <p class="prediction-label">Predicted Label: <span class="predicted-label">{{ label }}</span></p>
+        <a class="classify-another-btn" href="{% url 'upload' %}">Classify Another Image</a>
+    </div>
 </body>
 </html>
